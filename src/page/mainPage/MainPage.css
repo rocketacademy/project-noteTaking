@@ -7,7 +7,7 @@
     box-shadow: 6px 8px 11px 1px darkgrey;
 }
 .editBtn{
-    
+    margin-top: 25px;
     cursor: pointer;    
     outline: 0;
     display: inline-block;

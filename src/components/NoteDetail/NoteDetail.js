@@ -3,10 +3,14 @@ import "./NoteDetail.css";
 import { NotesContext } from "../../provider/NotesProvider";
 import { addAction, deleteAction, editAction } from "../../reducer/notes";
 
+// adding rich text editor
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
 export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
   const [note, setNote] = useState(null);
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState('');
   const { NotesDispatch, notesList } = useContext(NotesContext);
 
   const handleEditClick = () => {
@@ -20,6 +24,7 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
     modeChange(null);
   };
   const handleSave = () => {
+    console.log("content:", content);
     if (title === "") {
       window.alert("You are missing a title!");
       return;
@@ -37,21 +42,21 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
     if (mode === "new") {
       NotesDispatch(addAction(data));
       modeChange("view");
-      let newId = 1
-      if(notesList.length > 0){
-        newId = Number(notesList[notesList.length - 1].id) + 1
+      let newId = 1;
+      if (notesList.length > 0) {
+        newId = Number(notesList[notesList.length - 1].id) + 1;
       }
       noteChange(newId);
     }
 
     if (mode === "edit") {
-      data.date = note.date
-      data.id = note.id
-      NotesDispatch(editAction(data))
-      modeChange('view')
+      data.date = note.date;
+      data.id = note.id;
+      NotesDispatch(editAction(data));
+      modeChange("view");
     }
-    setTitle('')
-    setContent('')
+    setTitle("");
+    setContent("");
   };
 
   useEffect(() => {
@@ -65,10 +70,6 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
 
   const titleChange = (e) => {
     setTitle(e.target.value);
-  };
-
-  const contentChange = (e) => {
-    setContent(e.target.value);
   };
 
   const modeChecker = () => {
@@ -87,7 +88,7 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
           </div>
           <div className="noteDetails">
             <div className="noteContent">
-              <p>{note.content}</p>
+            <div dangerouslySetInnerHTML={{__html: note.content}} />
             </div>
             <div className="buttonContainer">
               <button className="editBtn" onClick={handleEditClick}>
@@ -120,12 +121,8 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
           </div>
           <div className="noteDetails">
             <div className="noteContent">
-              <textarea
-                placeholder="Enter your Note Here!"
-                className="contentInput"
-                onChange={(e) => contentChange(e)}
-                value={content}
-              ></textarea>
+
+              <ReactQuill theme="snow" className="contentInput" value={content} onChange={setContent} />
             </div>
             <button className="editBtn" onClick={handleSave}>
               Save
@@ -153,12 +150,8 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
           </div>
           <div className="noteDetails">
             <div className="noteContent">
-              <textarea
-                placeholder="Enter your Note Here!"
-                className="contentInput"
-                onChange={(e) => contentChange(e)}
-                value={content}
-              ></textarea>
+    
+              <ReactQuill theme="snow" className="contentInput" value={content} onChange={setContent} />
             </div>
             <button className="editBtn" onClick={handleSave}>
               Save
