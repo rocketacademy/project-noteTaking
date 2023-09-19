@@ -1,0 +1,32 @@
+.listContainer{
+    max-height: 100%;
+    width: 30%;
+    border-right: solid;
+    border-color: #a9a9a9;
+    padding: 2%;
+}
+h3{
+    margin-bottom: 5%;
+}
+
+.list{
+    height: 85%;
+    max-height: 85%;
+    overflow-y: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start
+}
+.listItem{
+    margin-top: 8%;
+    width: 100%;
+    padding-bottom: 7%;
+    border-bottom: solid;
+    border-color: #a9a9a9;
+    display: flex;
+    justify-content: space-around;
+}
+
+.clickable{
+    cursor:pointer;
+}
