@@ -1,19 +1,6 @@
 import { GET, FETCH, ADD, EDIT, DELETE } from "./notesActionTypes";
 
-export const initialState = [
-  {
-    id: 1,
-    title: "This is my first Note",
-    date: new Date(),
-    content: "I will put stuff into here as my first note",
-  },
-  {
-    id: 2,
-    title: "This is my second Note",
-    date: new Date(),
-    content: "I will put stuff into here as my second note",
-  },
-];
+export const initialState = [];
 
 export function notesReducer(state, action) {
   switch (action.type) {
