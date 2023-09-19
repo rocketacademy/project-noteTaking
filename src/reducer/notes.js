@@ -12,7 +12,10 @@ export function notesReducer(state, action) {
       }
       return [];
     case ADD:
-      const lastId = state[state.length - 1].id;
+      let lastId = 1;
+      if (state.length > 0) {
+        lastId = state[state.length - 1].id;
+      }
       const newAddedState = [
         ...state,
         { id: lastId + 1, ...action.payload.note },

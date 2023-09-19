@@ -37,7 +37,11 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
     if (mode === "new") {
       NotesDispatch(addAction(data));
       modeChange("view");
-      noteChange(Number(notesList[notesList.length - 1].id) + 1);
+      let newId = 1
+      if(notesList.length > 0){
+        newId = Number(notesList[notesList.length - 1].id) + 1
+      }
+      noteChange(newId);
     }
 
     if (mode === "edit") {
@@ -46,6 +50,8 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
       NotesDispatch(editAction(data))
       modeChange('view')
     }
+    setTitle('')
+    setContent('')
   };
 
   useEffect(() => {
