@@ -4,6 +4,8 @@
     border-right: solid;
     border-color: #a9a9a9;
     padding: 2%;
+    font:#4C061D;
+
 }
 h3{
     margin-bottom: 5%;
@@ -22,7 +24,7 @@ h3{
     width: 100%;
     padding-bottom: 7%;
     border-bottom: solid;
-    border-color: #a9a9a9;
+    border-color: #aec6cf;
     display: flex;
     justify-content: space-around;
 }

@@ -62,18 +62,35 @@
 .titleInput {
   height: 45%;
   width: auto;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding-left: 1%;
+}
+
+.titleInput:focus{
+    outline: none !important;
+    border: 2px solid #6fa9be;
 }
 
 
 .contentInput {
     margin: 2%;
-    max-height: 93%;
-    height: 93%;
-    width: 95%;
+    max-height: 87%;
+    height: 87%;
+    width: 90%;
     /* background-color: aquamarine; */
     text-align: start;
     overflow-y: auto;
+    overflow-x: hidden;
     resize: none;
+    font-size: 1.1rem;
+    font-family: inherit;
+    padding: 1%
+  }
+
+  .contentInput:focus{
+    outline: none !important;
+    border: 2px solid #6fa9be;
   }
 
   .defaultWarning{

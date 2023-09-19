@@ -46,7 +46,7 @@ export default function NoteList({modeChange, noteChange}) {
             })
           : null}
       </div>
-      <button onClick={newNote}>Add New Note</button>
+      <button className='editBtn' onClick={newNote}>Add New Note</button>
     </div>
   );
 }
