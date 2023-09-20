@@ -50,7 +50,6 @@
   max-height: 93%;
   height: 93%;
   width: 95%;
-  /* background-color: aquamarine; */
   text-align: start;
   overflow-y: auto;
 }
@@ -103,4 +102,15 @@
   .buttonContainer{
     display: flex;
     justify-content: space-around;
+  }
+
+  .dltBtn{
+    color: #b83939 !important;
+    border-color: #d9544d !important;
+  }
+
+  .dltBtn:hover{
+    color: #fff !important;
+    border-color: #d9544d !important;
+    background-color: #b83939 !important;
   }

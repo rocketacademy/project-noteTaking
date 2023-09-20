@@ -10,7 +10,7 @@ import "react-quill/dist/quill.snow.css";
 export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
   const [note, setNote] = useState(null);
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState("");
   const { NotesDispatch, notesList } = useContext(NotesContext);
 
   const handleEditClick = () => {
@@ -88,13 +88,13 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
           </div>
           <div className="noteDetails">
             <div className="noteContent">
-            <div dangerouslySetInnerHTML={{__html: note.content}} />
+              <div dangerouslySetInnerHTML={{ __html: note.content }} />
             </div>
             <div className="buttonContainer">
               <button className="editBtn" onClick={handleEditClick}>
                 Edit
               </button>
-              <button className="editBtn" onClick={handleDeleteClick}>
+              <button className="editBtn dltBtn" onClick={handleDeleteClick}>
                 Delete
               </button>
             </div>
@@ -121,8 +121,12 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
           </div>
           <div className="noteDetails">
             <div className="noteContent">
-
-              <ReactQuill theme="snow" className="contentInput" value={content} onChange={setContent} />
+              <ReactQuill
+                theme="snow"
+                className="contentInput"
+                value={content}
+                onChange={setContent}
+              />
             </div>
             <button className="editBtn" onClick={handleSave}>
               Save
@@ -150,8 +154,12 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
           </div>
           <div className="noteDetails">
             <div className="noteContent">
-    
-              <ReactQuill theme="snow" className="contentInput" value={content} onChange={setContent} />
+              <ReactQuill
+                theme="snow"
+                className="contentInput"
+                value={content}
+                onChange={setContent}
+              />
             </div>
             <button className="editBtn" onClick={handleSave}>
               Save
