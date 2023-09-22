@@ -1,5 +1,6 @@
 import { GET, FETCH, ADD, EDIT, DELETE } from "./notesActionTypes";
 
+// Sample Initial State
 export const initialState = [
   {
     id: 1,
@@ -15,40 +16,25 @@ export const initialState = [
   },
 ];
 
+// The reducer function to be used to manipulate the shared state
 export function notesReducer(state, action) {
   switch (action.type) {
     case GET:
       return state;
     case FETCH:
-      if (action.payload.notes) {
-        return action.payload.notes;
-      }
-      return [];
+      return state;
     case ADD:
-      const lastId = state[state.length - 1].id;
-      const newAddedState = [
-        ...state,
-        { id: lastId + 1, ...action.payload.note },
-      ];
-      localStorage.setItem("noteList", JSON.stringify(newAddedState));
-      return newAddedState;
+      return state;
     case EDIT:
-      return state.map((task) => {
-        if (task.id === action.payload.id) return action.payload;
-
-        return task;
-      });
+      return state;
     case DELETE:
-      const newDeletedState = state.filter(
-        (note, i) => action.payload.id !== note.id
-      );
-      localStorage.setItem("noteList", JSON.stringify(newDeletedState));
-      return newDeletedState;
+      return state;
     default:
       return state;
   }
 }
 
+// the following actions are to help set up our data easily to be easily used with our reducer function above
 export function getAction() {
   return {
     type: GET,
@@ -57,50 +43,29 @@ export function getAction() {
 }
 
 export function fetchAction() {
-  const data = localStorage.getItem("noteList");
-  let output = null;
-
-  if (data) {
-    output = JSON.parse(data);
-  }
   return {
     type: FETCH,
-    payload: {
-      notes: output,
-    },
+    payload: {},
   };
 }
 
 export const addAction = (note) => {
   return {
     type: ADD,
-    payload: {
-      note: {
-        title: note.title,
-        date: new Date(),
-        content: note.content,
-      },
-    },
+    payload: {},
   };
 };
 
-export function editAction(note) {
+export function editAction() {
   return {
     type: EDIT,
-    payload: {
-      id: note.id,
-      title: note.title,
-      date: note.date,
-      content: note.content,
-    },
+    payload: {},
   };
 }
 
-export function deleteAction(id) {
+export function deleteAction() {
   return {
     type: DELETE,
-    payload: {
-      id,
-    },
+    payload: {},
   };
 }
