@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Rocket Academy React Project Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You and your team are tasked with building out the following project in this coming section. In this repository, you will find the starter code necesary to get started with the project.
 
-## Available Scripts
 
-In the project directory, you can run:
+Below are some overview to help guide you with what is expected
 
-### `npm start`
+## React Note taker
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You and your team are tasked to build our your interpritation of a basic, working __Note taker__. To track, save, view and edit individual notes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Suggested Features
 
-### `npm test`
+We suggest the following features to be incorporated into your app:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. A place to save title, date and content of each note.
+2. Have a list of note titles, and allow uses to select which note to view
+3. Add or delete notes to the existing list
+4. Editting and saving of notes after initial creation
+4. Persist notes through different sessions utilizing local storage
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Suggested Components
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Main Page to hold all your components in place
+2. Note List which can be used to display a summary of all saved notes
+3. Note Detail which can be used to deplay the details of all your list or be used as an editing tool
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### What is provided for you
 
-### `npm run eject`
+In here you will find the following provided for you already:
+1. A suggested file structure for you to start your project
+2. A boiler plate context boiler plate and reducer to help your set up
+3. Reference solutions for you to look at commited into different branches
+### More comfortable
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Only proceed with this if you have completed the above and are looking for further challenges!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Explore packages such as https://quilljs.com/ to see if you can integrate what is known as a Rich Text Editor into this application!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Deployed Reference Solutions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+__Base Reference:__ https://rocket-notetaking-base.netlify.app/
 
-## Learn More
+__More Comfortable Refernce:__ https://rocket-notetaking-comf.netlify.app/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
