@@ -3,15 +3,16 @@ import "./NoteDetail.css";
 import { NotesContext } from "../../provider/NotesProvider";
 import { addAction, deleteAction, editAction } from "../../reducer/notes";
 
-// adding rich text editor
+// importing our rich text editor
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
+  // we will set up some states to use locally, along with importing the context to we can use them together
   const [note, setNote] = useState(null);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const { NotesDispatch, notesList } = useContext(NotesContext);
+  const { notesDispatch, notesList } = useContext(NotesContext);
 
   const handleEditClick = () => {
     setTitle(note.title);
@@ -20,9 +21,10 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
   };
 
   const handleDeleteClick = () => {
-    NotesDispatch(deleteAction(note.id));
+    notesDispatch(deleteAction(note.id));
     modeChange(null);
   };
+
   const handleSave = () => {
     console.log("content:", content);
     if (title === "") {
@@ -40,7 +42,7 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
     };
 
     if (mode === "new") {
-      NotesDispatch(addAction(data));
+      notesDispatch(addAction(data));
       modeChange("view");
       let newId = 1;
       if (notesList.length > 0) {
@@ -52,7 +54,7 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
     if (mode === "edit") {
       data.date = note.date;
       data.id = note.id;
-      NotesDispatch(editAction(data));
+      notesDispatch(editAction(data));
       modeChange("view");
     }
     setTitle("");
@@ -72,6 +74,7 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
     setTitle(e.target.value);
   };
 
+  // this function watches our states to determine which html element should be rendered onto our component
   const modeChecker = () => {
     if (mode === "view" && noteId && note) {
       return (
@@ -121,6 +124,7 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
           </div>
           <div className="noteDetails">
             <div className="noteContent">
+              {/* this is the only part of our code we had to edit to make sure we can use quil */}
               <ReactQuill
                 theme="snow"
                 className="contentInput"
@@ -154,6 +158,7 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
           </div>
           <div className="noteDetails">
             <div className="noteContent">
+              {/* this is the only part of our code we had to edit to make sure we can use quil */}
               <ReactQuill
                 theme="snow"
                 className="contentInput"
@@ -177,25 +182,5 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
     );
   };
 
-  return (
-    <div className="detailContainer">
-      {modeChecker()}
-      {/* <div className="detailHeader">
-        <div className="titleContainer">
-          <h2>THIS IS WHERE THE NOTE HEADER TILL GO</h2>
-        </div>
-        <div className="dateContainer">
-          <p className="dateDisplay">this is where the date will go</p>
-        </div>
-      </div>
-      <div className="noteDetails">
-        <div className="noteContent">
-          <p>My notes will go into here no problem</p>
-        </div>
-        <button className="editBtn" onClick={handleEditClick}>
-          Edit
-        </button>
-      </div> */}
-    </div>
-  );
+  return <div className="detailContainer">{modeChecker()}</div>;
 }

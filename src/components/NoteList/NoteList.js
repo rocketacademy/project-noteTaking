@@ -4,19 +4,21 @@ import { NotesContext } from "../../provider/NotesProvider";
 import {fetchAction } from "../../reducer/notes";
 
 export default function NoteList({modeChange, noteChange}) {
-  const { NotesDispatch, notesList } = useContext(NotesContext);
+  const { notesDispatch, notesList } = useContext(NotesContext);
 
+  // on mount, we will grab the lists that was saved in localstorage and use them
   useEffect(() => {
-    NotesDispatch(fetchAction());
+    notesDispatch(fetchAction());
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
+// handles view change of a note that will impact the NoteDetail component
   const handleClick = (e) =>{
     noteChange(e.target.id)
     modeChange('view')
   };
 
+  // again another mode change inorder to view edit note in the NoteDetail component
   const newNote = ()=>{
     modeChange('new')
   }
@@ -25,6 +27,7 @@ export default function NoteList({modeChange, noteChange}) {
     <div className="listContainer">
       <h3>Notes:</h3>
       <div className="list">
+        {/* We will see if we have notes, and if we do we will map them out! */}
         {notesList.length > 0
           ? notesList.map((note) => {
               return (
