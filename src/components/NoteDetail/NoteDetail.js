@@ -116,6 +116,7 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
                 size="50"
                 onChange={(e) => titleChange(e)}
                 value={title}
+                data-testid="titleInput"
               ></input>
             </div>
             <div className="dateContainer">
