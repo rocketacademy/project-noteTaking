@@ -7,10 +7,5 @@ import { addAction, deleteAction, editAction } from "../../reducer/notes";
 export default function NoteDetail(PROPS) {
   const { NotesDispatch, notesList } = useContext(NotesContext);
 
- 
-
-  return (
-    <div className="detailContainer">
-    </div>
-  );
+  return <div className="detailContainer"></div>;
 }
