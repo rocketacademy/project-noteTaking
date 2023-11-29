@@ -26,7 +26,6 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
   };
 
   const handleSave = () => {
-    console.log("content:", content);
     if (title === "") {
       window.alert("You are missing a title!");
       return;
