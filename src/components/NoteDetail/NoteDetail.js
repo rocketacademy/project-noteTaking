@@ -123,7 +123,7 @@ export default function NoteDetail({ mode, noteId, noteChange, modeChange }) {
             </div>
           </div>
           <div className="noteDetails">
-            <div className="noteContent">
+            <div className="noteContent" data-testid="noteContentInput">
               {/* this is the only part of our code we had to edit to make sure we can use quil */}
               <ReactQuill
                 theme="snow"
