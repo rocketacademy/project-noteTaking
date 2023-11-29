@@ -2,12 +2,11 @@
 
 You and your team are tasked with building out the following project in this coming section. In this repository, you will find the starter code necesary to get started with the project.
 
-
 Below are some overview to help guide you with what is expected
 
 ## React Note taker
 
-You and your team are tasked to build our your interpritation of a basic, working __Note taker__. To track, save, view and edit individual notes.
+You and your team are tasked to build our your interpritation of a basic, working **Note taker**. To track, save, view and edit individual notes.
 
 ### Suggested Features
 
@@ -17,8 +16,7 @@ We suggest the following features to be incorporated into your app:
 2. Have a list of note titles, and allow uses to select which note to view
 3. Add or delete notes to the existing list
 4. Editting and saving of notes after initial creation
-4. Persist notes through different sessions utilizing local storage
-
+5. Persist notes through different sessions utilizing local storage
 
 ### Suggested Components
 
@@ -29,9 +27,11 @@ We suggest the following features to be incorporated into your app:
 ### What is provided for you
 
 In here you will find the following provided for you already:
+
 1. A suggested file structure for you to start your project
 2. A boiler plate context boiler plate and reducer to help your set up
 3. Reference solutions for you to look at commited into different branches
+
 ### More comfortable
 
 **Only proceed with this if you have completed the above and are looking for further challenges!**
@@ -40,7 +40,6 @@ Explore packages such as https://quilljs.com/ to see if you can integrate what i
 
 ## Deployed Reference Solutions
 
-__Base Reference:__ https://rocket-notetaking-base.netlify.app/
+**Base Reference:** https://rocket-notetaking-base.netlify.app/
 
-__More Comfortable Refernce:__ https://rocket-notetaking-comf.netlify.app/
-
+**More Comfortable Refernce:** https://rocket-notetaking-comf.netlify.app/
